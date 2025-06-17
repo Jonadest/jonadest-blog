@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: all;
+}
+
+* {
+  font-family: 'Outfit', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  --color-primary: #5044e5;
+}
+
+.cate-card {
+  transform: scale(1);
+  transition: 0.25s;
+}
+
+.cate-card:hover {
+  transform: scale(1.1);
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid;
+}
