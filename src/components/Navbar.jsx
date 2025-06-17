@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className='flex justify-between items-center py-3  px-8 shadow-lg w-full mx-auto sticky top-0 left-0 z-50 bg-base-300'>
+    <nav className='flex justify-between items-center py-3  px-8 shadow-lg w-full mx-auto sticky top-0 left-0 z-50 bg-base-100'>
       <button
         onClick={() => navigate('/')}
         className='flex lg:hidden font-bold uppercase tracking-wider btn btn-ghost text-2xl'>

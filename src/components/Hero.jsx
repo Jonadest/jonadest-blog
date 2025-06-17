@@ -2,7 +2,7 @@ import CategoryCard from './CategoryCard';
 
 const Hero = () => {
   return (
-    <div className=' mx-auto w-[90%] lg:w-full'>
+    <div className=' mx-auto w-[90%] lg:w-full '>
       <div className='details lg:px-[350px]'>
         <h1 className='text-[70px] font-semibold pt-6  leading-18 text-shadow-lg'>
           Your own <span className='text-[#5044E5]'>blogging</span> <br />
@@ -35,7 +35,7 @@ const Hero = () => {
         </ul>
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-4 lg:px-[150px] gap-3'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 lg:px-[150px] gap-8  pb-30'>
         <CategoryCard />
       </div>
     </div>
