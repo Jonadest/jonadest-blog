@@ -60,6 +60,24 @@ const Comments = ({ blogId }) => {
         <p>
           <strong>Share this article on social media</strong>
         </p>
+        <div className='flex g-8 my-3'>
+          {' '}
+          <img
+            className='w-12 cursor-pointer'
+            src={assets.facebook_icon}
+            alt='icon '
+          />
+          <img
+            className='w-12 cursor-pointer'
+            src={assets.twitter_icon}
+            alt='icon '
+          />
+          <img
+            className='w-12 cursor-pointer'
+            src={assets.googleplus_icon}
+            alt='icon '
+          />
+        </div>
       </div>
     </div>
   );
