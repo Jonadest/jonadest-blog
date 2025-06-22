@@ -29,3 +29,30 @@
   outline: none;
   border: 1px solid;
 }
+
+.blog-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.blog-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.blog-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.blog-content ol,
+.blog-content ul {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.blog-content li {
+  margin: 0.5em 0;
+}

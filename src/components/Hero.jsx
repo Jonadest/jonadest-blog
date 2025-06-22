@@ -1,4 +1,6 @@
 import CategoryCard from './CategoryCard';
+import Bloglist from './Bloglist';
+import NewsLetter from './NewsLetter';
 
 const Hero = () => {
   return (
@@ -13,31 +15,15 @@ const Hero = () => {
           write without filters. Whether it’s one word or a thousand, your story
           starts right here.
         </p>
-        <div className='flex justify-center items-center gap-2 my-6'>
+        <form
+          action='#'
+          className='flex justify-center items-center gap-2 my-6'>
           <input type='search' placeholder='Search blogs' className='input' />
           <button className='btn'>Search</button>
-        </div>
-
-        <ul className='flex justify-center items-center  mx-auto  gap-y-2 my-6  lg:gap-x-3  flex-wrap'>
-          <li className='btn rounded-full sm:text-xs lg:text-[14px]'>All</li>
-          <li className='btn btn-ghost rounded-full sm:text-xs lg:text-[14px]'>
-            Technology
-          </li>
-          <li className='btn btn-ghost rounded-full sm:text-xs lg:text-[14px]'>
-            Startup
-          </li>
-          <li className='btn btn-ghost rounded-full sm:text-xs lg:text-[14px]'>
-            Lifestyle
-          </li>
-          <li className='btn btn-ghost rounded-full sm:text-xs lg:text-[14px]'>
-            Finance
-          </li>
-        </ul>
+        </form>
       </div>
-
-      <div className='grid grid-cols-1 lg:grid-cols-4 lg:px-[150px] gap-8  pb-30'>
-        <CategoryCard />
-      </div>
+      <Bloglist />
+      <NewsLetter />
     </div>
   );
 };
