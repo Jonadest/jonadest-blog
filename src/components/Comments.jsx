@@ -8,13 +8,39 @@ dayjs.extend(relativeTime);
 const Comments = ({ blogId }) => {
   const [comments, setComments] = useState([]);
 
+  // Load comments initially
   useEffect(() => {
-    // Filter comments that belong to the current blog post
     const filteredComments = comments_data.filter(
       (comment) => comment.blog._id === blogId
     );
     setComments(filteredComments);
   }, [blogId]);
+
+  // Handle new comment submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target[0].value.trim();
+    const content = e.target[1].value.trim();
+
+    if (!name || !content) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    const newComment = {
+      _id: Math.random().toString(36).substring(2, 15),
+      name,
+      content,
+      createdAt: new Date().toISOString(),
+      blog: { _id: blogId },
+    };
+
+    // Update both the global array and local state
+    comments_data.push(newComment);
+    setComments((prev) => [...prev, newComment]);
+    e.target.reset();
+    alert('Comment added successfully!');
+  };
 
   return (
     <div className='max-w-3xl mx-auto p-6'>
@@ -44,7 +70,7 @@ const Comments = ({ blogId }) => {
       <p>
         <strong>Add your comment</strong>
       </p>
-      <form className='flex flex-col items-start mt-3'>
+      <form onSubmit={handleSubmit} className='flex flex-col items-start mt-3'>
         <input type='text' className='input mb-3 w-full' placeholder='Name' />
         <textarea
           name='Comment'
@@ -60,22 +86,21 @@ const Comments = ({ blogId }) => {
         <p>
           <strong>Share this article on social media</strong>
         </p>
-        <div className='flex g-8 my-3'>
-          {' '}
+        <div className='flex gap-4 my-3'>
           <img
             className='w-12 cursor-pointer'
             src={assets.facebook_icon}
-            alt='icon '
+            alt='Facebook'
           />
           <img
             className='w-12 cursor-pointer'
             src={assets.twitter_icon}
-            alt='icon '
+            alt='Twitter'
           />
           <img
             className='w-12 cursor-pointer'
             src={assets.googleplus_icon}
-            alt='icon '
+            alt='Google+'
           />
         </div>
       </div>
