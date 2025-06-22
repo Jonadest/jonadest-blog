@@ -9,15 +9,8 @@ const Navbar = () => {
     <nav className='flex justify-between items-center py-3  px-8 shadow-lg w-full mx-auto sticky top-0 left-0 z-50 bg-base-100'>
       <button
         onClick={() => navigate('/')}
-        className='flex lg:hidden font-bold uppercase tracking-wider btn btn-ghost text-2xl'>
-        {' '}
-        J
-      </button>
-      <button
-        onClick={() => navigate('/')}
-        className='hidden lg:flex font-bold uppercase tracking-wider btn btn-ghost'>
-        {' '}
-        Jonadest
+        className='  font-bold uppercase tracking-wider '>
+        <img src='/favicon.svg' alt='logo' className='w-8 cursor-pointer' />
       </button>
       <ThemeController />
 
