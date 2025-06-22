@@ -39,6 +39,7 @@ const Comments = ({ blogId }) => {
     comments_data.push(newComment);
     setComments((prev) => [...prev, newComment]);
     e.target.reset();
+
     alert('Comment added successfully!');
   };
 
@@ -71,10 +72,16 @@ const Comments = ({ blogId }) => {
         <strong>Add your comment</strong>
       </p>
       <form onSubmit={handleSubmit} className='flex flex-col items-start mt-3'>
-        <input type='text' className='input mb-3 w-full' placeholder='Name' />
+        <input
+          type='text'
+          className='input mb-3 w-full'
+          placeholder='Name'
+          required
+        />
         <textarea
           name='Comment'
           placeholder='Comment'
+          required
           className='input h-48 w-full p-2 mb-3'></textarea>
         <button type='submit' className='btn'>
           Submit

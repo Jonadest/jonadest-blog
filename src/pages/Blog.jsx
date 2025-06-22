@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { blog_data } from '../assets/assets';
 import SinglePage from '../components/SinglePage';
 import Comments from '../components/Comments';
+import Loading from '../components/Loading';
 
 const Blog = () => {
   const { id } = useParams();
@@ -23,9 +24,7 @@ const Blog = () => {
       <Comments blogId={data._id} />
     </div>
   ) : (
-    <div className='flex justify-center items-center h-screen'>
-      <p className='text-2xl'>Loading...</p>
-    </div>
+    <Loading />
   );
 };
 
